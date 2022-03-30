@@ -3,10 +3,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
-const Layout = dynamic(
-  () => import('../components/layout'),
-  { ssr: false }
-)
+const Layout = dynamic(() => import('../components/layout'))
 
 const FormInput = dynamic(
   () => import('../components/FormInput'),
