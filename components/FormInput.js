@@ -26,6 +26,8 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 `
 
 export default function FormInput({ label, type, placeholder, value, onChange }) {
