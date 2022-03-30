@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import styled from 'styled-components'
+import { useState } from 'react'
 import Layout from '../components/layout'
+import Image from 'next/image'
 import FormInput from '../components/FormInput'
 
 const CampaignSection = styled.section`
@@ -242,14 +243,14 @@ const LegalContainer = styled.div`
   }
 `
 
-const Legal = styled.img`
+const Legal = styled.div`
   width: 25%;
   @media (max-width: 768px) {
     width: 70%;
   }
 `
 
-const Banner = styled.img`
+const Banner = styled.div`
   width: 120%;
   @media (max-width: 768px) {
     width: 100%;
@@ -257,7 +258,7 @@ const Banner = styled.img`
   }
 `
 
-const Prize = styled.img`
+const Prize = styled.div`
   width: 60%;
   @media (max-width: 768px) {
     width: 100%;
@@ -265,22 +266,26 @@ const Prize = styled.img`
   }
 `
 
-const Mbak = styled.img`
+const Mbak = styled.div`
   width: 40%;
   @media (max-width: 768px) {
     width: 100%;
   }
 `
 
-const Ticket = styled.img`
-  width: 50%;
+const Ticket = styled.div`
+  width: 100%;
   @media (max-width: 768px) {
     width: 100%;
   }
 `
 
-const Box = styled.img`
-  width: 50%;
+const Gift = styled.div`
+  width: 100%;
+`
+
+const Box = styled.div`
+  width: 100%;
 `
 
 export default function Home() {
@@ -340,9 +345,13 @@ export default function Home() {
             <IntroTitle>Sambut Ramadan dengan <Span>Kejutan Hadiah</Span> menarik dari Eternity</IntroTitle>
           </IntroContainer>
           <BannerContainer>
-            <Banner src="/images/lucky-draw.webp" alt='Lucky Draw Icon' />
+            <Banner>
+              <Image src="/images/lucky-draw.webp" alt='Lucky Draw Icon' width={1941} height={1000} layout='responsive' />
+            </Banner>
             <IntroDescription>Trading dan dapatkan hadiahnya!</IntroDescription>
-            <Prize src="/images/hadiah.webp" alt='Prize Icon'/>
+            <Prize>
+              <Image src="/images/hadiah.webp" alt='Prize Icon' width={2932} height={936} layout='responsive' />
+            </Prize>
           </BannerContainer>
         </CampaignWrapper>
       </CampaignSection>
@@ -350,7 +359,9 @@ export default function Home() {
       <FormSection>
         <Wrapper>
           <IconContainer>
-            <Mbak src="/images/mbak.webp" alt='Woman Icon'/>
+            <Mbak>
+              <Image src="/images/mbak.webp" alt='Woman Icon' width={1344} height={1504} layout='responsive' />
+            </Mbak>
           </IconContainer>
 
           <FormContainer>
@@ -399,7 +410,9 @@ export default function Home() {
         <Wrapper>
           <TermContainer>
             <TermTitleContainer>
-              <Box src='/images/kado-sk.webp' alt='Box Icon'/>
+              <Gift>
+                <Image src='/images/kado-sk.webp' alt='Box Icon' width={1034} height={1065} layout='responsive' />
+              </Gift>
               <TermTitle>Syarat & Ketentuan</TermTitle>
             </TermTitleContainer>
             <TermWrapper>
@@ -410,7 +423,9 @@ export default function Home() {
           </TermContainer>
 
           <IconContainer>
-            <Ticket src='/images/tiket.webp' alt='Ticket Icon'/>
+            <Ticket>
+              <Image src='/images/tiket.webp' alt='Ticket Icon' width={1237} height={1098} layout='responsive' />
+            </Ticket>
           </IconContainer>
         </Wrapper>
       </TermSection>
@@ -418,9 +433,15 @@ export default function Home() {
       <LegalSection>
         <FormTitle>Legalitas</FormTitle>
         <LegalContainer>
-          <Legal src="images/bappebti.webp" alt='Bappebti Icon'/>
-          <Legal src="images/jfx.webp" alt='JFX Icon'/>
-          <Legal src="images/kbi.webp" alt='KBI Icon'/>
+          <Legal>
+            <Image src="/images/bappebti.webp" alt='Bappebti Icon' width={882} height={405} layout='responsive'/>
+          </Legal>
+          <Legal>
+            <Image src="/images/jfx.webp" alt='JFX Icon' width={882} height={405} layout='responsive'/>
+          </Legal>
+          <Legal>
+            <Image src="/images/kbi.webp" alt='KBI Icon' width={882} height={405} layout='responsive'/>
+          </Legal>
         </LegalContainer>
       </LegalSection>
       

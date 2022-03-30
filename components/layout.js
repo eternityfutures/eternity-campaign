@@ -20,6 +20,13 @@ const HeaderWrapper = styled.div`
   margin: 0px auto;
 `
 
+const Logo = styled.div`
+  width: 20%;
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+`
+
 const name = 'Eternity Logo'
 export const siteTitle = 'Lucky Draw Poin Ramadan'
 
@@ -46,13 +53,9 @@ export default function Layout({ children }) {
         <HeaderWrapper>
           <Link href="/">
             <a>
-              <Image
-                priority
-                src="/images/eternity-logo2.webp"
-                height={90}
-                width={225}
-                alt={name}
-              />
+              <Logo>
+                <Image priority src="/images/eternity-logo2.webp" width={2001} height={826} alt={name} layout="responsive" />
+              </Logo>
             </a>
           </Link>
         </HeaderWrapper>
