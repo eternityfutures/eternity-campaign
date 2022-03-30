@@ -17,6 +17,7 @@ const Header = styled.header`
 
 const HeaderWrapper = styled.div`
   max-width: 1280px;
+  height: max-content;
   margin: 0px auto;
 `
 
