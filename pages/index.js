@@ -1,8 +1,17 @@
-import styled from 'styled-components'
 import { useState } from 'react'
-import Layout from '../components/layout'
 import Image from 'next/image'
-import FormInput from '../components/FormInput'
+import dynamic from 'next/dynamic'
+import styled from 'styled-components'
+
+const Layout = dynamic(
+  () => import('../components/layout'),
+  { ssr: false }
+)
+
+const FormInput = dynamic(
+  () => import('../components/FormInput'),
+  { ssr: false }
+)
 
 const CampaignSection = styled.section`
   background-image: linear-gradient(to right, #422574, #7f389e);
