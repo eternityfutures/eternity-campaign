@@ -340,9 +340,9 @@ export default function Home() {
             <IntroTitle>Sambut Ramadan dengan <Span>Kejutan Hadiah</Span> menarik dari Eternity</IntroTitle>
           </IntroContainer>
           <BannerContainer>
-            <Banner src="/assets/lucky-draw.png" alt='Lucky Draw Icon' />
+            <Banner src="/images/lucky-draw.webp" alt='Lucky Draw Icon' />
             <IntroDescription>Trading dan dapatkan hadiahnya!</IntroDescription>
-            <Prize src="/assets/hadiah.png" alt='Prize Icon'/>
+            <Prize src="/images/hadiah.webp" alt='Prize Icon'/>
           </BannerContainer>
         </CampaignWrapper>
       </CampaignSection>
@@ -350,7 +350,7 @@ export default function Home() {
       <FormSection>
         <Wrapper>
           <IconContainer>
-            <Mbak src="/assets/mbak.png" alt='Woman Icon'/>
+            <Mbak src="/images/mbak.webp" alt='Woman Icon'/>
           </IconContainer>
 
           <FormContainer>
@@ -399,7 +399,7 @@ export default function Home() {
         <Wrapper>
           <TermContainer>
             <TermTitleContainer>
-              <Box src='/assets/kado-sk.png' alt='Box Icon'/>
+              <Box src='/images/kado-sk.webp' alt='Box Icon'/>
               <TermTitle>Syarat & Ketentuan</TermTitle>
             </TermTitleContainer>
             <TermWrapper>
@@ -410,7 +410,7 @@ export default function Home() {
           </TermContainer>
 
           <IconContainer>
-            <Ticket src='/assets/tiket.png' alt='Ticket Icon'/>
+            <Ticket src='/images/tiket.webp' alt='Ticket Icon'/>
           </IconContainer>
         </Wrapper>
       </TermSection>
@@ -418,9 +418,9 @@ export default function Home() {
       <LegalSection>
         <FormTitle>Legalitas</FormTitle>
         <LegalContainer>
-          <Legal src="assets/bappebti.png" alt='Bappebti Icon'/>
-          <Legal src="assets/jfx.png" alt='JFX Icon'/>
-          <Legal src="assets/kbi.png" alt='KBI Icon'/>
+          <Legal src="images/bappebti.webp" alt='Bappebti Icon'/>
+          <Legal src="images/jfx.webp" alt='JFX Icon'/>
+          <Legal src="images/kbi.webp" alt='KBI Icon'/>
         </LegalContainer>
       </LegalSection>
       

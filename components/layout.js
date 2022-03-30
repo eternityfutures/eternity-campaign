@@ -48,7 +48,7 @@ export default function Layout({ children }) {
             <a>
               <Image
                 priority
-                src="/assets/eternity-logo2.png"
+                src="/images/eternity-logo2.webp"
                 height={90}
                 width={225}
                 alt={name}
