@@ -1,69 +1,429 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useState } from 'react'
+import styled from 'styled-components'
+import Layout from '../components/layout'
+import FormInput from '../components/FormInput'
+
+const CampaignSection = styled.section`
+  background-image: linear-gradient(to right, #422574, #7f389e);
+  min-height: 600px;
+  padding: 0 3rem 3rem 3rem;
+  @media (max-width: 768px) {
+    padding: 0 1.5rem 4rem 1.5rem;
+    flex-direction: column-reverse;
+    min-height: 500px;
+  }
+`
+
+const CampaignWrapper = styled.div`
+  max-width: 1280px;
+  margin: 0px auto;
+  display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+`
+
+const IntroContainer = styled.div`
+  align-self: center;
+  width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+`
+
+const BannerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+` 
+
+const IntroTitle = styled.p`
+  font-family: 'Serca';
+  font-size: 42px;
+  font-weight: 700;
+  color: #fdf7f2;
+  margin: 0;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  @media (max-width: 768px) {
+    font-size: 25px;
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+`
+
+const Span = styled.span`
+  font-family: 'Serca';
+  font-size: 74px;
+  font-weight: 700;
+  color: #fedc17;
+  margin: 0;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  @media (max-width: 768px) {
+    font-size: 43px;
+  }
+`
+
+const IntroDescription = styled.p`
+  font-family: 'Serca';
+  font-weight: 500;
+  text-align: center;
+  color: #FDF7F2;
+  margin: 0px;
+  margin-bottom: 12px;
+  margin-top: -20px;
+  line-height: 1.5;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+`
+
+const FormSection = styled.section`
+  background-color: #FDF7F2;
+  height: max-content;
+  padding: 3rem 0;
+  text-align: center;
+  @media (max-width: 768px) {
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
+  }
+`
+
+const FormTitle = styled.h1`
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5vw;
+  font-family: 'Serca';
+  font-size: 48px;
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 10vw;
+  }
+`
+
+const ErrorText = styled.p`
+  font-family: 'Serca';
+  font-size: 18px;
+  color: red;
+  margin: 0;
+  line-height: 2;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  gap: 50px;
+  max-width: 1280px;
+  margin: 0px auto;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+  }
+`
+
+const FormContainer = styled.div`
+  width: 50%;
+  height: 452px;
+  align-self: center;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const IconContainer = styled.div`
+  display: contents;
+`
+
+const Form = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+`
+
+const RegisterButton = styled.button`
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #7f389e;
+  border: none;
+  color: #FDF7F2;
+  font-family: 'Serca';
+  font-size: 16px;
+  letter-spacing: 1px;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+`
+
+const TermSection = styled.section`
+  background-color: #7f389e;
+  height: max-content;
+  padding: 3rem;
+  @media (max-width: 768px) {
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+  }
+`
+
+const TermContainer = styled.div`
+  align-self: center;
+`
+
+const TermTitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+`
+
+const TermTitle = styled.h1`
+  width: 100%;
+  margin: 0;
+  font-family: 'Serca';
+  font-size: 48px;
+  color: #FDF7F2;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+`
+
+const TermWrapper = styled.div`
+  max-width: 1280px;
+  margin: 0px auto;
+`
+
+const TermDescription = styled.p`
+  font-family: 'Serca';
+  font-size: 18px;
+  color: #FDF7F2;
+  margin: 0;
+  line-height: 2;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
+
+const SocialLink = styled.a`
+  color: #fedc17;
+`
+
+const LegalSection = styled.section`
+  background-color: #FDF7F2;
+  height: max-content;
+  padding: 3rem;
+  align-item: center;
+  @media (max-width: 768px) {
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+  }
+`
+
+const LegalContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  max-width: 1280px;
+  margin: 0px auto;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+`
+
+const Legal = styled.img`
+  width: 25%;
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+`
+
+const Banner = styled.img`
+  width: 120%;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 24px 0 12px 0;
+  }
+`
+
+const Prize = styled.img`
+  width: 60%;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+`
+
+const Mbak = styled.img`
+  width: 40%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const Ticket = styled.img`
+  width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const Box = styled.img`
+  width: 50%;
+`
 
 export default function Home() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [birthDate, setBirthDate] = useState('')
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+  
+  const handlePost = async (e) => {
+    e.preventDefault();
+
+    // reset error and message
+    setError('');
+    setMessage('');
+
+    // fields check
+    if (!name || !email || !phoneNumber || !birthDate) return setError('All fields are required');
+
+    // post structure
+    let user = {
+        name,
+        email,
+        phoneNumber,
+        birthDate,
+        createdAt: new Date().toString(),
+    };
+    // save the post
+    let response = await fetch('/api/register', {
+        method: 'POST',
+        body: JSON.stringify(user),
+    });
+
+    // get the data
+    let data = await response.json();
+    console.log(data);
+
+    if (data.success) {
+        // reset the fields
+        // setTitle('');
+        // setContent('');
+        // set the message
+        return setMessage(data.message);
+    } else {
+        // set the error
+        return setError(data.message);
+    }
+};
+  
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <CampaignSection>
+        <CampaignWrapper>
+          <IntroContainer>
+            <IntroTitle>Sambut Ramadan dengan <Span>Kejutan Hadiah</Span> menarik dari Eternity</IntroTitle>
+          </IntroContainer>
+          <BannerContainer>
+            <Banner src="/assets/lucky-draw.png" alt='Lucky Draw Icon' />
+            <IntroDescription>Trading dan dapatkan hadiahnya!</IntroDescription>
+            <Prize src="/assets/hadiah.png" alt='Prize Icon'/>
+          </BannerContainer>
+        </CampaignWrapper>
+      </CampaignSection>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <FormSection>
+        <Wrapper>
+          <IconContainer>
+            <Mbak src="/assets/mbak.png" alt='Woman Icon'/>
+          </IconContainer>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <FormContainer>
+            <FormTitle>Open Account Now</FormTitle>
+            <form onSubmit={handlePost}>
+              <Form>
+                <FormInput 
+                  label="Name" 
+                  placeholder="Your Name" 
+                  type="text" 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <FormInput 
+                  label="Email" 
+                  placeholder="Your Email" 
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form>
+              <Form>
+                <FormInput 
+                  label="Phone Number" 
+                  placeholder="Your Phone Number" 
+                  type="text"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+                <FormInput 
+                  label="Birth Date"
+                  placeholder="Your Birth Date" 
+                  type="date" 
+                  value={birthDate}
+                  onChange={(e) => setBirthDate(e.target.value)}
+                />
+              </Form>
+              <RegisterButton type='submit'>Register Now</RegisterButton>
+            </form>
+            <ErrorText>{error}</ErrorText>
+          </FormContainer>
+        </Wrapper>
+      </FormSection>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+      <TermSection>
+        <Wrapper>
+          <TermContainer>
+            <TermTitleContainer>
+              <Box src='/assets/kado-sk.png' alt='Box Icon'/>
+              <TermTitle>Syarat & Ketentuan</TermTitle>
+            </TermTitleContainer>
+            <TermWrapper>
+              <TermDescription>1. Berusia minimal 20 tahun per 1 April 2022 (harus dapat dibuktikan dengan kartu identitas yang masih berlaku ("identitas diri") pada saat verifikasi pemenang</TermDescription>
+              <TermDescription>2. peserta wajib follow Instagram <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink> , tiktok <SocialLink href='https://www.tiktok.com/@eternityfutures' target='_blank'>eternityfutures</SocialLink> & channel youtube <SocialLink href='https://www.youtube.com/channel/UC_ZQvXdxeyKLFtzYVtsTyhQ' target='_blank'>Eternity Futures</SocialLink></TermDescription>
+              <TermDescription>3. Pemenang akan dihubungi melalui mobile phone.  Pastikan Data diri yang diinput valid.</TermDescription>
+            </TermWrapper>
+          </TermContainer>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <IconContainer>
+            <Ticket src='/assets/tiket.png' alt='Ticket Icon'/>
+          </IconContainer>
+        </Wrapper>
+      </TermSection>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <LegalSection>
+        <FormTitle>Legalitas</FormTitle>
+        <LegalContainer>
+          <Legal src="assets/bappebti.png" alt='Bappebti Icon'/>
+          <Legal src="assets/jfx.png" alt='JFX Icon'/>
+          <Legal src="assets/kbi.png" alt='KBI Icon'/>
+        </LegalContainer>
+      </LegalSection>
+      
+    </Layout>
   )
 }

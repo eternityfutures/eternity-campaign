@@ -14,3 +14,40 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Serca';
+  src: url('/fonts/Serca-Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Serca';
+  src: url('/fonts/Serca-Medium.otf');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Serca';
+  src: url('/fonts/Serca-SemiBold.otf');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Serca';
+  src: url('/fonts/Serca-Bold.otf');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Goudy';
+  src: url('/fonts/Goudy-BoldOsF.otf');
+  font-style: bold;
+  font-weight: 700;
+}
