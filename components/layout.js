@@ -21,16 +21,17 @@ const HeaderWrapper = styled.div`
 `
 
 const name = 'Eternity Logo'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Lucky Draw Poin Ramadan'
 
 export default function Layout({ children }) {
   return (
     <Container>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Eternity</title>
+        <link rel="icon" href="https://eternityfutures.co.id/assets-public/images/priceIcon3.png" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Sambut Ramadan dengan Kejutan Hadiah menarik dari Eternity"
         />
         <meta
           property="og:image"
