@@ -389,7 +389,7 @@ export default function Home() {
           <Link href="/">
             <a>
               <Logo>
-                <Image src="/images/eternity-logo2.webp" width={2001} height={826} alt="Eternity Logo" layout="responsive" />
+                <Image src="/images/eternity-logo2.webp" width={2001} height={826} alt="Eternity Logo" />
               </Logo>
             </a>
           </Link>

@@ -14,7 +14,7 @@ export default function Layout({ children }) {
     <Container>
       <Head>
         <title>Eternity</title>
-        <link rel="icon" href="/images/cat-rainbow.webp" />
+        <link rel="icon" href="/cat-rainbow.ico" />
         <meta
           name="description"
           content="Sambut Ramadan dengan Kejutan Hadiah menarik dari Eternity"
