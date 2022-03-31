@@ -388,7 +388,7 @@ export default function Home() {
             </IntroContainer>
             <BannerContainer>
               <Banner>
-                <Image src="/images/lucky-draw.webp" alt='Lucky Draw Icon' width={1941} height={1000} layout='responsive' />
+                <Image priority src="/images/lucky-draw.webp" alt='Lucky Draw Icon' width={1941} height={1000} layout='responsive' />
               </Banner>
               <IntroDescription>Trading dan dapatkan hadiahnya!</IntroDescription>
               <Prize>
@@ -402,7 +402,7 @@ export default function Home() {
           <Wrapper>
             <IconContainer>
               <Mbak>
-                <Image src="/images/mbak.webp" alt='Woman Icon' width={1344} height={1504} layout='responsive' />
+                <Image priority src="/images/mbak.webp" alt='Woman Icon' width={1344} height={1504} layout='responsive' />
               </Mbak>
             </IconContainer>
 

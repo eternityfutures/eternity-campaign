@@ -39,15 +39,3 @@ a {
   font-style: normal;
   font-weight: 700;
 }
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Regular.ttf');
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Goudy';
-  src: url('/fonts/Goudy-BoldOsF.otf');
-  font-style: bold;
-  font-weight: 700;
-}

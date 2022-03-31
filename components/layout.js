@@ -14,7 +14,7 @@ export default function Layout({ children }) {
     <Container>
       <Head>
         <title>Eternity</title>
-        <link rel="icon" href="https://eternityfutures.co.id/assets-public/images/priceIcon3.png" />
+        <link rel="icon" href="/images/cat-rainbow.webp" />
         <meta
           name="description"
           content="Sambut Ramadan dengan Kejutan Hadiah menarik dari Eternity"
