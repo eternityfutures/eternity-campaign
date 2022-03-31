@@ -11,7 +11,8 @@ const FormInput = dynamic(
   { ssr: false }
 )
 
-const Header = styled.header`
+const Header = styled.div`
+  width: 100%;
   height: max-content;
   padding: 2rem 3rem 0 3rem;
   background-image: linear-gradient(to right, #422574, #7f389e);
@@ -20,15 +21,15 @@ const Header = styled.header`
   }
 `
 
-const Main = styled.main`
-  min-height: 100vh;
-  width: 100%;
-`
-
 const HeaderWrapper = styled.div`
   max-width: 1280px;
   height: max-content;
-  margin: 0px auto;
+  margin: 0px auto; 
+`
+
+const Main = styled.main`
+  min-height: 100vh;
+  width: 100%;
 `
 
 const Logo = styled.div`
