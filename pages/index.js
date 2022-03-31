@@ -20,6 +20,11 @@ const Header = styled.header`
   }
 `
 
+const Main = styled.main`
+  min-height: 100vh;
+  width: 100%;
+`
+
 const HeaderWrapper = styled.div`
   max-width: 1280px;
   height: max-content;
@@ -121,7 +126,7 @@ const FormSection = styled.section`
   padding: 3rem 0;
   text-align: center;
   @media (max-width: 768px) {
-    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
   }
 `
 
@@ -172,7 +177,6 @@ const Wrapper = styled.div`
 
 const FormContainer = styled.div`
   width: 50%;
-  height: 452px;
   align-self: center;
   @media (max-width: 768px) {
     width: 100%;
@@ -391,7 +395,7 @@ export default function Home() {
         </HeaderWrapper>
       </Header>
 
-      <main>
+      <Main>
         <CampaignSection>
           <CampaignWrapper>
             <IntroContainer>
@@ -499,7 +503,7 @@ export default function Home() {
             </Legal>
           </LegalContainer>
         </LegalSection>
-      </main>
+      </Main>
       
     </Layout>
   )
