@@ -155,6 +155,17 @@ const ErrorText = styled.p`
   }
 `
 
+const SuccessText = styled.p`
+  font-family: 'Serca';
+  font-size: 18px;
+  color: green;
+  margin: 0;
+  line-height: 2;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
+
 const WrapperTerm = styled.div`
   display: flex;
   gap: 50px;
@@ -178,9 +189,11 @@ const Wrapper = styled.div`
 
 const FormContainer = styled.div`
   width: 50%;
+  height: 317px;
   align-self: center;
   @media (max-width: 768px) {
     width: 100%;
+    height: 454px;
   }
 `
 
@@ -211,6 +224,10 @@ const RegisterButton = styled.button`
   font-family: 'Serca';
   font-size: 16px;
   letter-spacing: 1px;
+  :disabled {
+    background-color: #8a629c;
+    cursor: wait;
+  }
   @media (max-width: 768px) {
     margin-top: 20px;
   }
@@ -337,7 +354,8 @@ export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [accountNumber, setAccountNumber] = useState('')
+  const [accountNumber, setAccountNumber] = useState('');
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   
@@ -349,14 +367,15 @@ export default function Home() {
     setMessage('');
 
     // fields check
-    if (!name || !email || !phoneNumber || !birthDate) return setError('All fields are required');
+    if (!name || !email || !phoneNumber || !accountNumber) return setError('All fields are required');
 
+    setLoading(true);
     // post structure
     let user = {
         name,
         email,
         phoneNumber,
-        birthDate,
+        accountNumber,
         createdAt: new Date().toString(),
     };
     // save the post
@@ -367,17 +386,21 @@ export default function Home() {
 
     // get the data
     let data = await response.json();
-    console.log(data);
 
     if (data.success) {
         // reset the fields
-        // setTitle('');
-        // setContent('');
+        setName('');
+        setEmail('')
+        setPhoneNumber('')
+        setAccountNumber('')
+        setLoading(false);
+
         // set the message
-        return setMessage(data.message);
+        return setMessage('Success Input Data');
     } else {
         // set the error
-        return setError(data.message);
+        setLoading(false);
+        return setError('Error, please try again');
     }
 };
   
@@ -457,9 +480,12 @@ export default function Home() {
                     onChange={(e) => setAccountNumber(e.target.value)}
                   />
                 </Form>
-                <RegisterButton type='submit'>Get Ticket</RegisterButton>
+                <RegisterButton type='submit' disabled={loading}>
+                  {loading ? 'Loading..' : 'Get Ticket'}
+                </RegisterButton>
               </form>
               <ErrorText>{error}</ErrorText>
+              <SuccessText>{message}</SuccessText>
             </FormContainer>
           </Wrapper>
         </FormSection>
