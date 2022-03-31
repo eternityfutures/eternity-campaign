@@ -22,11 +22,8 @@ const Header = styled.header`
 
 const HeaderWrapper = styled.div`
   max-width: 1280px;
-  min-height: 100px;
+  height: max-content;
   margin: 0px auto;
-  @media (max-width: 768px) {
-    min-height: 75px;
-  }
 `
 
 const Logo = styled.div`
@@ -39,7 +36,7 @@ const Logo = styled.div`
 
 const CampaignSection = styled.section`
   background-image: linear-gradient(to right, #422574, #7f389e);
-  min-height: 600px;
+  height: max-content;
   padding: 0 3rem 3rem 3rem;
   @media (max-width: 768px) {
     padding: 0 1.5rem 4rem 1.5rem;
@@ -152,6 +149,16 @@ const ErrorText = styled.p`
   }
 `
 
+const WrapperTerm = styled.div`
+  display: flex;
+  gap: 50px;
+  max-width: 1280px;
+  margin: 0px auto;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+`
 const Wrapper = styled.div`
   display: flex;
   gap: 50px;
@@ -325,7 +332,7 @@ export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [birthDate, setBirthDate] = useState('')
+  const [accountNumber, setAccountNumber] = useState('')
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   
@@ -411,7 +418,7 @@ export default function Home() {
             </IconContainer>
 
             <FormContainer>
-              <FormTitle>Open Account Now</FormTitle>
+              {/* <FormTitle>Open Account Now</FormTitle> */}
               <form onSubmit={handlePost}>
                 <Form>
                   <FormInput 
@@ -438,14 +445,14 @@ export default function Home() {
                     onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                   <FormInput 
-                    label="Birth Date"
-                    placeholder="Your Birth Date" 
-                    type="date" 
-                    value={birthDate}
-                    onChange={(e) => setBirthDate(e.target.value)}
+                    label="Account Number"
+                    placeholder="Your Account Number" 
+                    type="text" 
+                    value={accountNumber}
+                    onChange={(e) => setAccountNumber(e.target.value)}
                   />
                 </Form>
-                <RegisterButton type='submit'>Register Now</RegisterButton>
+                <RegisterButton type='submit'>Get Ticket</RegisterButton>
               </form>
               <ErrorText>{error}</ErrorText>
             </FormContainer>
@@ -453,7 +460,7 @@ export default function Home() {
         </FormSection>
 
         <TermSection>
-          <Wrapper>
+          <WrapperTerm>
             <TermContainer>
               <TermTitleContainer>
                 <Gift>
@@ -462,9 +469,11 @@ export default function Home() {
                 <TermTitle>Syarat & Ketentuan</TermTitle>
               </TermTitleContainer>
               <TermWrapper>
-                <TermDescription>1. Berusia minimal 20 tahun per 1 April 2022 (harus dapat dibuktikan dengan kartu identitas yang masih berlaku ("identitas diri") pada saat verifikasi pemenang</TermDescription>
+                <TermDescription>1. Peserta membuka akun trading di eternity futures</TermDescription>
                 <TermDescription>2. peserta wajib follow Instagram <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink> , tiktok <SocialLink href='https://www.tiktok.com/@eternityfutures' target='_blank'>eternityfutures</SocialLink> & channel youtube <SocialLink href='https://www.youtube.com/channel/UC_ZQvXdxeyKLFtzYVtsTyhQ' target='_blank'>Eternity Futures</SocialLink></TermDescription>
                 <TermDescription>3. Pemenang akan dihubungi melalui mobile phone.  Pastikan Data diri yang diinput valid.</TermDescription>
+                <TermDescription>4. Hadiah akan diundi pada tanggal 29 April 2022 pukul 17.00 waktu Jakarta melalui IG live account <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink></TermDescription>
+              
               </TermWrapper>
             </TermContainer>
 
@@ -473,7 +482,7 @@ export default function Home() {
                 <Image src='/images/tiket.webp' alt='Ticket Icon' width={1237} height={1098} layout='responsive' />
               </Ticket>
             </IconContainer>
-          </Wrapper>
+          </WrapperTerm>
         </TermSection>
 
         <LegalSection>
