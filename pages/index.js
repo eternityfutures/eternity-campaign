@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
@@ -9,6 +10,28 @@ const FormInput = dynamic(
   () => import('../components/FormInput'),
   { ssr: false }
 )
+
+const Header = styled.header`
+  height: max-content;
+  padding: 2rem 3rem 0 3rem;
+  background-image: linear-gradient(to right, #422574, #7f389e);
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+`
+
+const HeaderWrapper = styled.div`
+  max-width: 1280px;
+  margin: 0px auto;
+`
+
+const Logo = styled.div`
+  width: 18%;
+  display: inline-block;
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+`
 
 const CampaignSection = styled.section`
   background-image: linear-gradient(to right, #422574, #7f389e);
@@ -345,111 +368,125 @@ export default function Home() {
   return (
     <Layout>
 
-      <CampaignSection>
-        <CampaignWrapper>
-          <IntroContainer>
-            <IntroTitle>Sambut Ramadan dengan <Span>Kejutan Hadiah</Span> menarik dari Eternity</IntroTitle>
-          </IntroContainer>
-          <BannerContainer>
-            <Banner>
-              <Image src="/images/lucky-draw.webp" alt='Lucky Draw Icon' width={1941} height={1000} layout='responsive' />
-            </Banner>
-            <IntroDescription>Trading dan dapatkan hadiahnya!</IntroDescription>
-            <Prize>
-              <Image src="/images/hadiah.webp" alt='Prize Icon' width={2932} height={936} layout='responsive' />
-            </Prize>
-          </BannerContainer>
-        </CampaignWrapper>
-      </CampaignSection>
+      <Header>
+        <HeaderWrapper>
+          <Link href="/">
+            <a>
+              <Logo>
+                <Image src="/images/eternity-logo2.webp" width={2001} height={826} alt="Eternity Logo" layout="responsive" />
+              </Logo>
+            </a>
+          </Link>
+        </HeaderWrapper>
+      </Header>
 
-      <FormSection>
-        <Wrapper>
-          <IconContainer>
-            <Mbak>
-              <Image src="/images/mbak.webp" alt='Woman Icon' width={1344} height={1504} layout='responsive' />
-            </Mbak>
-          </IconContainer>
+      <main>
+        <CampaignSection>
+          <CampaignWrapper>
+            <IntroContainer>
+              <IntroTitle>Sambut Ramadan dengan <Span>Kejutan Hadiah</Span> menarik dari Eternity</IntroTitle>
+            </IntroContainer>
+            <BannerContainer>
+              <Banner>
+                <Image src="/images/lucky-draw.webp" alt='Lucky Draw Icon' width={1941} height={1000} layout='responsive' />
+              </Banner>
+              <IntroDescription>Trading dan dapatkan hadiahnya!</IntroDescription>
+              <Prize>
+                <Image src="/images/hadiah.webp" alt='Prize Icon' width={2932} height={936} layout='responsive' />
+              </Prize>
+            </BannerContainer>
+          </CampaignWrapper>
+        </CampaignSection>
 
-          <FormContainer>
-            <FormTitle>Open Account Now</FormTitle>
-            <form onSubmit={handlePost}>
-              <Form>
-                <FormInput 
-                  label="Name" 
-                  placeholder="Your Name" 
-                  type="text" 
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <FormInput 
-                  label="Email" 
-                  placeholder="Your Email" 
-                  type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Form>
-              <Form>
-                <FormInput 
-                  label="Phone Number" 
-                  placeholder="Your Phone Number" 
-                  type="text"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                />
-                <FormInput 
-                  label="Birth Date"
-                  placeholder="Your Birth Date" 
-                  type="date" 
-                  value={birthDate}
-                  onChange={(e) => setBirthDate(e.target.value)}
-                />
-              </Form>
-              <RegisterButton type='submit'>Register Now</RegisterButton>
-            </form>
-            <ErrorText>{error}</ErrorText>
-          </FormContainer>
-        </Wrapper>
-      </FormSection>
+        <FormSection>
+          <Wrapper>
+            <IconContainer>
+              <Mbak>
+                <Image src="/images/mbak.webp" alt='Woman Icon' width={1344} height={1504} layout='responsive' />
+              </Mbak>
+            </IconContainer>
 
-      <TermSection>
-        <Wrapper>
-          <TermContainer>
-            <TermTitleContainer>
-              <Gift>
-                <Image src='/images/kado-sk.webp' alt='Box Icon' width={1034} height={1065} layout='responsive' />
-              </Gift>
-              <TermTitle>Syarat & Ketentuan</TermTitle>
-            </TermTitleContainer>
-            <TermWrapper>
-              <TermDescription>1. Berusia minimal 20 tahun per 1 April 2022 (harus dapat dibuktikan dengan kartu identitas yang masih berlaku ("identitas diri") pada saat verifikasi pemenang</TermDescription>
-              <TermDescription>2. peserta wajib follow Instagram <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink> , tiktok <SocialLink href='https://www.tiktok.com/@eternityfutures' target='_blank'>eternityfutures</SocialLink> & channel youtube <SocialLink href='https://www.youtube.com/channel/UC_ZQvXdxeyKLFtzYVtsTyhQ' target='_blank'>Eternity Futures</SocialLink></TermDescription>
-              <TermDescription>3. Pemenang akan dihubungi melalui mobile phone.  Pastikan Data diri yang diinput valid.</TermDescription>
-            </TermWrapper>
-          </TermContainer>
+            <FormContainer>
+              <FormTitle>Open Account Now</FormTitle>
+              <form onSubmit={handlePost}>
+                <Form>
+                  <FormInput 
+                    label="Name" 
+                    placeholder="Your Name" 
+                    type="text" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <FormInput 
+                    label="Email" 
+                    placeholder="Your Email" 
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form>
+                <Form>
+                  <FormInput 
+                    label="Phone Number" 
+                    placeholder="Your Phone Number" 
+                    type="text"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                  />
+                  <FormInput 
+                    label="Birth Date"
+                    placeholder="Your Birth Date" 
+                    type="date" 
+                    value={birthDate}
+                    onChange={(e) => setBirthDate(e.target.value)}
+                  />
+                </Form>
+                <RegisterButton type='submit'>Register Now</RegisterButton>
+              </form>
+              <ErrorText>{error}</ErrorText>
+            </FormContainer>
+          </Wrapper>
+        </FormSection>
 
-          <IconContainer>
-            <Ticket>
-              <Image src='/images/tiket.webp' alt='Ticket Icon' width={1237} height={1098} layout='responsive' />
-            </Ticket>
-          </IconContainer>
-        </Wrapper>
-      </TermSection>
+        <TermSection>
+          <Wrapper>
+            <TermContainer>
+              <TermTitleContainer>
+                <Gift>
+                  <Image src='/images/kado-sk.webp' alt='Box Icon' width={1034} height={1065} layout='responsive' />
+                </Gift>
+                <TermTitle>Syarat & Ketentuan</TermTitle>
+              </TermTitleContainer>
+              <TermWrapper>
+                <TermDescription>1. Berusia minimal 20 tahun per 1 April 2022 (harus dapat dibuktikan dengan kartu identitas yang masih berlaku ("identitas diri") pada saat verifikasi pemenang</TermDescription>
+                <TermDescription>2. peserta wajib follow Instagram <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink> , tiktok <SocialLink href='https://www.tiktok.com/@eternityfutures' target='_blank'>eternityfutures</SocialLink> & channel youtube <SocialLink href='https://www.youtube.com/channel/UC_ZQvXdxeyKLFtzYVtsTyhQ' target='_blank'>Eternity Futures</SocialLink></TermDescription>
+                <TermDescription>3. Pemenang akan dihubungi melalui mobile phone.  Pastikan Data diri yang diinput valid.</TermDescription>
+              </TermWrapper>
+            </TermContainer>
 
-      <LegalSection>
-        <FormTitle>Legalitas</FormTitle>
-        <LegalContainer>
-          <Legal>
-            <Image src="/images/bappebti.webp" alt='Bappebti Icon' width={882} height={405} layout='responsive'/>
-          </Legal>
-          <Legal>
-            <Image src="/images/jfx.webp" alt='JFX Icon' width={882} height={405} layout='responsive'/>
-          </Legal>
-          <Legal>
-            <Image src="/images/kbi.webp" alt='KBI Icon' width={882} height={405} layout='responsive'/>
-          </Legal>
-        </LegalContainer>
-      </LegalSection>
+            <IconContainer>
+              <Ticket>
+                <Image src='/images/tiket.webp' alt='Ticket Icon' width={1237} height={1098} layout='responsive' />
+              </Ticket>
+            </IconContainer>
+          </Wrapper>
+        </TermSection>
+
+        <LegalSection>
+          <FormTitle>Legalitas</FormTitle>
+          <LegalContainer>
+            <Legal>
+              <Image src="/images/bappebti.webp" alt='Bappebti Icon' width={882} height={405} layout='responsive'/>
+            </Legal>
+            <Legal>
+              <Image src="/images/jfx.webp" alt='JFX Icon' width={882} height={405} layout='responsive'/>
+            </Legal>
+            <Legal>
+              <Image src="/images/kbi.webp" alt='KBI Icon' width={882} height={405} layout='responsive'/>
+            </Legal>
+          </LegalContainer>
+        </LegalSection>
+      </main>
       
     </Layout>
   )

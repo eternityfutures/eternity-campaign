@@ -7,23 +7,6 @@ const Container = styled.div`
   
 `
 
-const Header = styled.header`
-  padding: 2rem 6rem 0 6rem;
-  background-image: linear-gradient(to right, #422574, #7f389e);
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-  }
-`
-
-const Logo = styled.div`
-  width: 18%;
-  display: inline-block;
-  @media (max-width: 768px) {
-    width: 50%;
-  }
-`
-
-const name = 'Eternity Logo'
 export const siteTitle = 'Lucky Draw Poin Ramadan'
 
 export default function Layout({ children }) {
@@ -45,16 +28,7 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header>
-        <Link href="/">
-          <a>
-            <Logo>
-              <Image priority src="/images/eternity-logo2.webp" width={2001} height={826} alt={name} layout="responsive" />
-            </Logo>
-          </a>
-        </Link>
-      </Header>
-      <main>{children}</main>
+      {children} 
     </Container>
   )
 }
