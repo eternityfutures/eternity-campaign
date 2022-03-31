@@ -22,7 +22,11 @@ const Header = styled.header`
 
 const HeaderWrapper = styled.div`
   max-width: 1280px;
+  min-height: 100px;
   margin: 0px auto;
+  @media (max-width: 768px) {
+    min-height: 75px;
+  }
 `
 
 const Logo = styled.div`
