@@ -346,10 +346,6 @@ const Gift = styled.div`
   width: 100%;
 `
 
-const Box = styled.div`
-  width: 100%;
-`
-
 export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -446,7 +442,6 @@ export default function Home() {
             </IconContainer>
 
             <FormContainer>
-              {/* <FormTitle>Open Account Now</FormTitle> */}
               <form onSubmit={handlePost}>
                 <Form>
                   <FormInput 
@@ -504,7 +499,6 @@ export default function Home() {
                 <TermDescription>2. peserta wajib follow Instagram <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink> , tiktok <SocialLink href='https://www.tiktok.com/@eternityfutures' target='_blank'>eternityfutures</SocialLink> & channel youtube <SocialLink href='https://www.youtube.com/channel/UC_ZQvXdxeyKLFtzYVtsTyhQ' target='_blank'>Eternity Futures</SocialLink></TermDescription>
                 <TermDescription>3. Pemenang akan dihubungi melalui mobile phone.  Pastikan Data diri yang diinput valid.</TermDescription>
                 <TermDescription>4. Hadiah akan diundi pada tanggal 29 April 2022 pukul 17.00 waktu Jakarta melalui IG live account <SocialLink href='https://www.instagram.com/eternity_futures/' target="_blank">eternity_futures</SocialLink></TermDescription>
-              
               </TermWrapper>
             </TermContainer>
 
