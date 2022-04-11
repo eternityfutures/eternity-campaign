@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
+import Head from 'next/head'
+import Script from 'next/script'
 
 const Layout = dynamic(() => import('../components/layout'))
 
@@ -402,6 +404,14 @@ export default function Home() {
   
   return (
     <Layout>
+      <Head>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `gtag('event', 'conversion', {'send_to': 'AW-10856943421/KXksCJHy6aMDEL2e_7go'});`
+        }}
+      />
+      </Head>
 
       <Header>
         <HeaderWrapper>
