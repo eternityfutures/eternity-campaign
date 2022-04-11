@@ -1,4 +1,6 @@
 import {Html, Head, Main, NextScript} from "next/document";
+import Script from "next/script";
+import * as gtag from '../lib/gtag';
 
 export default function Document() {
   return (
@@ -11,6 +13,13 @@ export default function Document() {
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MMKC36Z');`}}>
         </script>
+
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${gtag.GA_TRACKING_ID}');`}}></script>
 
         <link
           rel="preload"
