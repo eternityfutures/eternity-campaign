@@ -3,15 +3,7 @@ import {Html, Head, Main, NextScript} from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10856943421"></script>
-        <script dangerouslySetInnerHTML={{ __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-10856943421');`}}>
-        </script>
-        
+      <Head>]
         <script dangerouslySetInnerHTML={{ __html: `
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
