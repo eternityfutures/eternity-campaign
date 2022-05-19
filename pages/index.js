@@ -4,7 +4,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
-const Layout = dynamic(() => import('../components/Layout'))
+const LayoutComponent = dynamic(() => import('../components/LayoutComponent'))
 
 const FormInput = dynamic(
   () => import('../components/FormInput'),
@@ -401,7 +401,7 @@ export default function Home() {
 };
   
   return (
-    <Layout>
+    <LayoutComponent>
 
       <Header>
         <HeaderWrapper>
@@ -526,6 +526,6 @@ export default function Home() {
         </LegalSection>
       </Main>
       
-    </Layout>
+    </LayoutComponent>
   )
 }
