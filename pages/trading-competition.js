@@ -31,7 +31,7 @@ const IntroSection = styled.div`
 `
 
 const TitleMargin = styled.h1`
-  font-family: "Work Sans", san-serif;
+  font-family: "Sora", san-serif;
   font-size: 36px;
   margin: 0;
   margin-bottom: 16px;
@@ -42,8 +42,9 @@ const TitleMargin = styled.h1`
 `
 
 const Title = styled.h1`
-  font-family: "Work Sans", san-serif;
+  font-family: "Sora", san-serif;
   font-size: 36px;
+  color: #212427;
   margin: 0;
   @media (max-width: 768px) {
     font-size: 26px;
@@ -53,14 +54,19 @@ const Title = styled.h1`
 const SubHeading = styled.p`
   font-size: 20px;
   font-weight: bold;
+  color: #FFF;
   text-decoration: underline;
+  background: #D64CA8;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
 `
 
 const Description = styled.p`
-  font-family: "Work Sans", san-serif;
+  font-family: "Sora", san-serif;
+  color: #212427;
   margin: 0;
   line-height: 1.8;
-  color: ${props => props.color};
 `
 
 const Table = styled.table`
@@ -71,8 +77,9 @@ const Table = styled.table`
 `
 
 const Td = styled.td`
-  font-family: "Work Sans", san-serif;
+  font-family: "Sora", san-serif;
   padding: 4px 4px 4px 56px;
+  color: #212427;
   @media (max-width: 768px) {
     padding: 4px;
   }
@@ -83,8 +90,9 @@ const Ol = styled.ol`
 `
 
 const List = styled.li`
-  font-family: "Work Sans", san-serif;
+  font-family: "Sora", san-serif;
   line-height: 1.8;
+  color: #212427;
 `
 
 const FormContainer = styled.div`
@@ -124,7 +132,7 @@ const PrizeContainer = styled.div`
 
 const MainPrize = styled.div`
   width: 656px;
-  height: 85px;
+  // height: 85px;
   background: #D64CA8;
   border-radius: 12px;
   padding: 20px;
@@ -153,7 +161,7 @@ const OtherPrize = styled.div`
 `
 
 const PrizeText = styled.p`
-  font-family: "Work Sans", san-serif;
+  font-family: "Sora", san-serif;
   font-size: 24px;
   font-weight: bold;
   margin: 0;
@@ -171,16 +179,117 @@ const Flex = styled.div`
   }
 `
 
-const IconContainer = styled.div`
-  display: contents;
-`
-
 const Asset = styled.div`
   width: 50%;
   display: flex;
   align-items: center;
   @media (max-width: 768px) {
     width: 100%;
+  }
+`
+
+const RowPrize = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`
+
+const WinnerAsset = styled.div`
+  width: max-content;
+  position: absolute;
+  right: 81%;
+  bottom: 81%;
+  @media (max-width: 768px) {
+    width: 20%;
+    position: static;
+  }
+`
+
+const WinnerAssetSm = styled.div`
+  width: max-content;
+  position: absolute;
+  right: 85%;
+  bottom: 75%;
+  @media (max-width: 768px) {
+    width: 20%;
+    position: static;
+  }
+`
+
+const LeaderboardList = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin: 3rem 0;
+  @media (max-width: 768px) {
+   flex-direction: column; 
+   gap: 30px;
+  }
+`
+
+const LeaderboardCard = styled.div`
+  width: 33%;
+  order: ${props => props.order};
+  @media (max-width: 768px) {
+    width: 100%;
+    order: 0;
+  }
+`
+
+const MainLeaderboard = styled.div`
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  border: 2px solid #D64CA8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #1a1a1a;
+  @media (max-width: 768px) {
+    height: max-content;
+    padding: 12px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`
+
+const OtherLeaderboard = styled.div`
+  height: 250px;
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #1a1a1a;
+  @media (max-width: 768px) {
+    padding: 12px;
+    height: max-content;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`
+
+const LeaderboardName = styled.p`
+  font-family: "Sora", san-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+`
+
+const ProfitText = styled.p`
+  font-family: "Sora", san-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #7BF795;
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `
 
@@ -206,8 +315,8 @@ export default function Home() {
       <Container>
         <IntroSection>
           <Title>ETERNITY PRESENT:</Title>
-          <TitleMargin>TRADING COMPETITION 2022</TitleMargin>
-          <Image src={"/trading-comp/banner-final.webp"} width={1080} height={552} alt="Banner" style={{ borderRadius: 10 }}/>
+          <TitleMargin color='#212427'>TRADING COMPETITION 2022</TitleMargin>
+          <Image src={"/trading-comp/banner-final.webp"} width={1080} height={552} alt="Banner" style={{ borderRadius: 12 }}/>
           <Description style={{ marginTop: 16 }}>
             Saat yang ditunggu-tunggu nih! Kompetisi Trading 2022 dari Eternity Futures akan hadir! 
             Untuk kamu para trader dan investor yang ingin memperoleh keuntungan hingga ratusan juta rupiah dari aktivitas trading kamu. 
@@ -220,16 +329,18 @@ export default function Home() {
       <Container color="#D64CA8">
         <IntroSection>
           <TitleMargin color='#FFF'>Persyaratan Pendaftaran Program Eternity Trading Competition</TitleMargin>
-          <Description color='#FFF'>1. Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures</Description>
-          <Description color='#FFF'>2. Calon Peserta memiliki waktu mendaftar diri untuk program Eternity Trading Competition pada 23 Mei - 5 Juni 2022</Description>
-          <Description color='#FFF'>3. Periode Eternity trading competition 2022 akan berlangsung mulai dari 6-17 Juni 2022.</Description>
-          <Description color='#FFF'>4. Peserta Akan disediakan Akun demo sebesar $2,000 oleh pihak Eternity Futures dan peserta harus melakukan trading dengan minimum 5 lots turnover</Description>
+          <Ol type='1'>
+            <List style={{ color: '#FFF' }}>Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures</List>
+            <List style={{ color: '#FFF' }}>Calon Peserta memiliki waktu mendaftar diri untuk program Eternity Trading Competition pada 23 Mei - 9 Juni 2022</List>
+            <List style={{ color: '#FFF' }}>Periode Eternity trading competition 2022 akan berlangsung mulai dari 13-24 Juni 2022.</List>
+            <List style={{ color: '#FFF' }}>Peserta Akan disediakan Akun demo sebesar $2,000 oleh pihak Eternity Futures dan peserta harus melakukan trading dengan minimum 5 lots turnover</List>
+          </Ol>
         </IntroSection>
       </Container>
 
       <Container>
         <IntroSection>
-          <TitleMargin>Pembagian Hadiah Eternity Trading Competition</TitleMargin>
+          <TitleMargin color='#212427'>Pembagian Hadiah Eternity Trading Competition</TitleMargin>
 
           <PrizeContainer>
             <MainPrize>
@@ -238,33 +349,33 @@ export default function Home() {
             </MainPrize>
 
             <OtherPrize>
-              <PrizeText>Juara 2</PrizeText>
-              <PrizeText>Rp 5juta</PrizeText>
+              <PrizeText color='#212427'>Juara 2</PrizeText>
+              <PrizeText color='#212427'>Rp 5juta</PrizeText>
             </OtherPrize>
 
             <OtherPrize>
-              <PrizeText>Juara 3</PrizeText>
-              <PrizeText>Rp 2juta</PrizeText>
+              <PrizeText color='#212427'>Juara 3</PrizeText>
+              <PrizeText color='#212427'>Rp 2juta</PrizeText>
             </OtherPrize>
 
             <OtherPrize>
-              <PrizeText>Juara 4 s.d 10</PrizeText>
-              <PrizeText>Total Rp 7juta</PrizeText>
+              <PrizeText color='#212427'>Juara 4 - 10</PrizeText>
+              <PrizeText color='#212427'>Total Rp 7juta</PrizeText>
             </OtherPrize>
 
             <OtherPrize>
-              <PrizeText>Juara Turnover Terbanyak</PrizeText>
-              <PrizeText>Rp 3juta</PrizeText>
+              <PrizeText color='#212427'>Jumlah Turnover Terbanyak</PrizeText>
+              <PrizeText color='#212427'>Rp 3juta</PrizeText>
             </OtherPrize>
           </PrizeContainer>
 
           <SubHeading>Hadiah Tambahan:</SubHeading>
           <Ol type='1'>
-            <List>Untuk 10 pemenang akan mendapatkan <b> Demo Accounts dengan nominal $1,000</b> dimana tiap <b> PROFIT dapat diambil</b> dengan ketentuan:</List>
+            <List>Untuk 10 pemenang akan diberikan <b> Demo Accounts dengan nominal $1,000</b> dimana tiap <b> PROFIT yang dihasilkan dapat di-withdraw</b> dengan ketentuan:</List>
             <ul>
-              <List>trading dengan minimal 20 lots turnover</List>
-              <List>periode 2 minggu hingga 1 bulan setelah mendapatkan akun demo</List>
-              <List>maksimum profit yang dapat diambil/dicairkan/di klaim sebesar $1,000 atau Rp 10juta</List>
+              <List>transaksi minimal 20 lots turnover</List>
+              <List>periode 2 minggu</List>
+              <List>maksimum profit yang dapat di-withdraw sebesar $1,000 atau Rp 10juta</List>
             </ul>
             <List>Untuk <u>semua partisipan</u> akan yang membukan Real Account akan <b>mendapatkan FREE COMM hingga akhir Juli 2022</b></List>
           </Ol>
@@ -306,7 +417,7 @@ export default function Home() {
             </FormContainer>
 
             <Asset>
-              <Image src={"/trading-comp/trading-comp.webp"} width={820} height={643} alt="Asset" />
+              <Image src={"/trading-comp/trading-comp2.webp"} width={750} height={700} alt="Asset" />
             </Asset>
           </Flex>
           
@@ -315,21 +426,21 @@ export default function Home() {
 
       <Container>
         <IntroSection>
-          <TitleMargin>Syarat & Ketentuan Eternity Trading Competition</TitleMargin>
+          <TitleMargin color='#212427'>Syarat & Ketentuan Eternity Trading Competition</TitleMargin>
           <Ol type='1'>
             <List>Periode Eternity Trading Competition 2022 akan dilaksanakan dengan keterangan sebagai berikut:</List>
             <Table>
               <tr>
                 <Td>Periode Registrasi</Td>
-                <Td>: 23 Mei - 5 Juni 2022</Td>
+                <Td>: 23 Mei - 9 Juni 2022</Td>
               </tr>
               <tr>
-                <Td>Periode Trading Competition 2</Td>
-                <Td>: 6 - 17 Juni 2022</Td>
+                <Td>Periode Trading Competition</Td>
+                <Td>: 13 - 24 Juni 2022</Td>
               </tr>
               <tr>
                 <Td>Periode Pengumuman Pemenang</Td>
-                <Td>: 20 Juni 2022</Td>
+                <Td>: 27 Juni 2022</Td>
               </tr>
             </Table>
             <List>
@@ -345,6 +456,46 @@ export default function Home() {
             <List>Dengan mengikuti Eternity Trading Competition 2022, Peserta mengerti dan setuju terhadap Syarat & Ketentuan Trading Competition 2022.</List>
             <List>Keputusan yang ditetapkan pihak Eternity Futures bersifat final, mengikat, mutlak dan tidak dapat diganggu gugat.</List>
           </Ol>
+
+        </IntroSection>
+      </Container>
+
+      <Container color="#172026">
+        <IntroSection>
+          <TitleMargin color='#FDFAF7'>Leaderboard Hari Ini</TitleMargin>
+          <LeaderboardList>
+
+            <LeaderboardCard order="2">
+              <MainLeaderboard>
+                <WinnerAsset>
+                  <Image src={"/trading-comp/winner-1.webp"} width={100} height={100} />
+                </WinnerAsset>
+                <LeaderboardName>Finsen Antonius</LeaderboardName>
+                <ProfitText>+533,96%</ProfitText>
+              </MainLeaderboard>
+            </LeaderboardCard>
+
+            <LeaderboardCard order="1">
+              <OtherLeaderboard>
+                <WinnerAssetSm>
+                  <Image src={"/trading-comp/winner-2.webp"} width={80} height={80} />
+                </WinnerAssetSm>
+                <LeaderboardName>Bella Patriani</LeaderboardName>
+                <ProfitText>+200,73%</ProfitText>
+              </OtherLeaderboard>
+            </LeaderboardCard>
+
+            <LeaderboardCard order="3">
+              <OtherLeaderboard>
+                <WinnerAssetSm>
+                  <Image src={"/trading-comp/winner-3.webp"} width={80} height={80} />
+                </WinnerAssetSm>
+                <LeaderboardName>Aurel</LeaderboardName>
+                <ProfitText>+33,96%</ProfitText>
+              </OtherLeaderboard>
+            </LeaderboardCard>
+
+          </LeaderboardList>
 
         </IntroSection>
       </Container>

@@ -10,6 +10,7 @@ const Label = styled.p`
   font-family: 'Serca';
   font-weight: 600;
   font-size: 24px;
+  color: #212427;
   margin: 0;
   margin-bottom: 6px;
   text-align: start;
