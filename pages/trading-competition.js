@@ -96,9 +96,6 @@ const FormContainer = styled.div`
 
 const Form = styled.div`
   margin-bottom: 20px;
-  @media (max-width: 768px) {
-    
-  }
 `
 
 const RegisterButton = styled.button`
@@ -116,9 +113,6 @@ const RegisterButton = styled.button`
   :disabled {
     background-color: #8a629c;
     cursor: wait;
-  }
-  @media (max-width: 768px) {
-    
   }
 `
 
