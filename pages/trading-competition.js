@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -21,6 +21,24 @@ const FormInput = dynamic(
 const HeaderSection = styled.div`
   padding: 1.5rem 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const HeaderButton = styled.button`
+  cursor: pointer;
+  width: 140px;
+  height: 45px;
+  border-radius: 10px;
+  background: #FF8F5C;
+  border: none;
+  color: #FDF7F2;
+  font-family: "Sora", san-serif;
+  font-size: 16px;
+  @media (max-width: 768px) {
+    width: 110px;
+    font-size: 14px;
+  }
 `
 
 const IntroSection = styled.div`
@@ -294,9 +312,15 @@ const ProfitText = styled.p`
 `
 
 export default function Home() {
+  const registerRef = useRef()
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+
+  function handleRegisterScroll() {
+    registerRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <LayoutComponent>
@@ -309,6 +333,7 @@ export default function Home() {
       <HeaderContainer color="#D64CA8">
         <HeaderSection>
           <Image src={"/trading-comp/eternity-logo-white.webp"} width={145} height={32} alt="Eternity Logo" />
+          <HeaderButton onClick={handleRegisterScroll}>Register Now</HeaderButton>
         </HeaderSection>
       </HeaderContainer>
 
@@ -383,46 +408,48 @@ export default function Home() {
         </IntroSection>
       </Container>
 
-      <Container color="#D64CA8">
-        <IntroSection>
-          <TitleMargin color='#FFF'>Daftar Sekarang!</TitleMargin>
-          <Flex>
-            <FormContainer>
-              <form>
-                <Form>
-                  <FormInput 
-                    label="Name" 
-                    placeholder="Your Name" 
-                    type="text" 
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                  <FormInput 
-                    label="Email" 
-                    placeholder="Your Email" 
-                    type="text" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <FormInput 
-                    label="Phone Number" 
-                    placeholder="Your Phone Number" 
-                    type="text" 
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                  />
-                </Form>
-                <RegisterButton>Submit</RegisterButton>
-              </form>
-            </FormContainer>
+      <div ref={registerRef}>
+        <Container color="#D64CA8">
+          <IntroSection>
+            <TitleMargin color='#FFF'>Daftar Sekarang!</TitleMargin>
+            <Flex>
+              <FormContainer>
+                <form>
+                  <Form>
+                    <FormInput 
+                      label="Name" 
+                      placeholder="Your Name" 
+                      type="text" 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <FormInput 
+                      label="Email" 
+                      placeholder="Your Email" 
+                      type="text" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <FormInput 
+                      label="Phone Number" 
+                      placeholder="Your Phone Number" 
+                      type="text" 
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                  </Form>
+                  <RegisterButton>Submit</RegisterButton>
+                </form>
+              </FormContainer>
 
-            <Asset>
-              <Image src={"/trading-comp/trading-comp2.webp"} width={750} height={700} alt="Asset" />
-            </Asset>
-          </Flex>
-          
-        </IntroSection>
-      </Container>
+              <Asset>
+                <Image src={"/trading-comp/trading-comp2.webp"} width={750} height={700} alt="Asset" />
+              </Asset>
+            </Flex>
+            
+          </IntroSection>
+        </Container>
+      </div>
 
       <Container>
         <IntroSection>
