@@ -4,7 +4,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
-const Layout = dynamic(() => import('../components/layout'))
+const Layout = dynamic(() => import('../components/Layout'))
 
 const FormInput = dynamic(
   () => import('../components/FormInput'),
