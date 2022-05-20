@@ -42,7 +42,7 @@ const HeaderButton = styled.button`
   font-size: 16px;
   outline: none;
   @media (max-width: 768px) {
-    width: 110px;
+    width: 120px;
     font-size: 14px;
   }
 `
