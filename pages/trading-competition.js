@@ -66,7 +66,7 @@ const IntroSection = styled.div`
 
 const TitleMargin = styled.h1`
   font-family: "Sora", san-serif;
-  font-size: 36px;
+  font-size: 35px;
   margin: 0;
   margin-bottom: 16px;
   color: ${props => props.color};
