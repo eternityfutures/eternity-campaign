@@ -77,7 +77,7 @@ const TitleMargin = styled.h1`
 
 const Title = styled.h1`
   font-family: "Sora", san-serif;
-  font-size: 36px;
+  font-size: 35px;
   color: #212427;
   margin: 0;
   @media (max-width: 768px) {
