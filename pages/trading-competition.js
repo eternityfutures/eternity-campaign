@@ -78,7 +78,7 @@ const TitleMargin = styled.h1`
 const Title = styled.h1`
   font-family: "Sora", san-serif;
   font-size: 35px;
-  color: #212427;
+  color: ${props => props.color};
   margin: 0;
   @media (max-width: 768px) {
     font-size: 26px;
@@ -106,17 +106,9 @@ const Description = styled.p`
 const FormDescription = styled.p`
   font-family: "Sora", san-serif;
   font-size: 12px;
-  color: #212427;
+  color: #fff;
   margin: 0;
   line-height: 1.8;
-`
-
-const LinkText = styled.a`
-  font-family: "Sora", san-serif;
-  font-weight: bold;
-  line-height: 1.8;
-  color: #FFF;
-  word-wrap: break-word;
 `
 
 const Table = styled.table`
@@ -455,7 +447,7 @@ export default function Home() {
       
       <Container>
         <IntroSection>
-          <Title>ETERNITY PRESENT:</Title>
+          <Title color='#212427'>ETERNITY PRESENT:</Title>
           <TitleMargin color='#212427'>TRADING COMPETITION 2022</TitleMargin>
           <Image src={"/trading-comp/banner-final4.webp"} width={1080} height={552} alt="Banner" />
           <Description style={{ marginTop: 16 }}>Saat yang ditunggu-tunggu nih!</Description> 
@@ -466,10 +458,11 @@ export default function Home() {
 
       <ContainerGradient>
         <IntroSection>
-          <TitleMargin color='#FFF'>Persyaratan & Pendaftaran Eternity Trading Competition</TitleMargin>
+          <Title color='#FFF'>Persyaratan & Pendaftaran</Title>
+          <TitleMargin color='#FFF'>Eternity Trading Competition</TitleMargin>
           <Ol type='1'>
-            <List style={{ color: '#FFF' }}>Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures <span><LinkText href='https://campaign.eternityfutures.com/trading-competition'>https://campaign.eternityfutures.com/trading-competition</LinkText></span></List>
-            <List style={{ color: '#FFF' }}>Calon Peserta dapat mendaftar untuk ikut dalam Eternity Trading Competition pada 23 Mei - 9 Juni 2022</List>
+            <List style={{ color: '#FFF' }}>Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures</List>
+            <List style={{ color: '#FFF' }}>Calon Peserta dapat mendaftar untuk ikut dalam Eternity Trading Competition pada <b>23 Mei - 9 Juni 2022</b></List>
             <List style={{ color: '#FFF' }}>Eternity trading competition 2022 akan berlangsung <b>mulai dari 13 hingga 24 Juni 2022</b></List>
             <List style={{ color: '#FFF' }}>Kepada Peserta akan diberikan Akun demo sebesar $2,000 dan peserta harus melakukan transaksi sebanyak <b>minimum 5 lots turnover</b></List>
           </Ol>
