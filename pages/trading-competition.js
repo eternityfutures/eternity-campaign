@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -457,7 +457,7 @@ export default function Home() {
         <IntroSection>
           <Title>ETERNITY PRESENT:</Title>
           <TitleMargin color='#212427'>TRADING COMPETITION 2022</TitleMargin>
-          <Image src={"/trading-comp/banner-final.webp"} width={1080} height={552} alt="Banner" />
+          <Image src={"/trading-comp/banner-final4.webp"} width={1080} height={552} alt="Banner" />
           <Description style={{ marginTop: 16 }}>Saat yang ditunggu-tunggu nih!</Description> 
           <Description>Kompetisi Trading 2022 dari Eternity Futures akan hadir untuk kamu para trader dan investor. Yuk gabung di Eternity Trading Competition 2022 dan menangkan total hadiah Rp 100 Juta++.</Description>
           <Description>Kapan lagi TRADING BOHONGAN tapi dapat DUIT BENERAN?</Description>
@@ -576,18 +576,20 @@ export default function Home() {
           <Ol type='1'>
             <List>Eternity Trading Competition 2022 akan dilaksanakan dengan details sebagai berikut:</List>
             <Table>
-              <tr>
-                <Td>Periode Registrasi</Td>
-                <Td>: 23 Mei - 9 Juni 2022</Td>
-              </tr>
-              <tr>
-                <Td>Periode Trading Competition</Td>
-                <Td>: 13 - 24 Juni 2022</Td>
-              </tr>
-              <tr>
-                <Td>Pengumuman Pemenang</Td>
-                <Td>: 27 Juni 2022</Td>
-              </tr>
+              <tbody>
+                <tr>
+                  <Td>Periode Registrasi</Td>
+                  <Td>: 23 Mei - 9 Juni 2022</Td>
+                </tr>
+                <tr>
+                  <Td>Periode Trading Competition</Td>
+                  <Td>: 13 - 24 Juni 2022</Td>
+                </tr>
+                <tr>
+                  <Td>Pengumuman Pemenang</Td>
+                  <Td>: 27 Juni 2022</Td>
+                </tr>
+              </tbody>
             </Table>
             <List>
               <Ol type='a'>
