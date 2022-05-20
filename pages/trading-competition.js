@@ -30,6 +30,15 @@ const HeaderSection = styled.div`
   align-items: center;
 `
 
+const LogoContainer = styled.div`
+  width: 50%;
+  display: flex;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 35%;
+  }
+`
+
 const HeaderButton = styled.button`
   cursor: pointer;
   width: 140px;
@@ -42,7 +51,8 @@ const HeaderButton = styled.button`
   font-size: 16px;
   outline: none;
   @media (max-width: 768px) {
-    width: 120px;
+    width: 125px;
+    height: 40px;
     font-size: 14px;
   }
 `
@@ -178,7 +188,7 @@ const PrizeContainer = styled.div`
 
 const MainPrize = styled.div`
   width: 656px;
-  // height: 85px;
+  height: 85px;
   background: #D64CA8;
   border-radius: 12px;
   padding: 20px;
@@ -188,6 +198,7 @@ const MainPrize = styled.div`
   justify-content: space-between;
   @media (max-width: 768px) {
     width: 100%;
+    height: 65px;
   }
 `
 
@@ -203,6 +214,7 @@ const OtherPrize = styled.div`
   justify-content: space-between;
   @media (max-width: 768px) {
     width: 100%;
+    height: 65px;
   }
 `
 
@@ -417,7 +429,9 @@ export default function Home() {
 
       <HeaderContainer>
         <HeaderSection>
-          <Image src={"/trading-comp/eternity-logo-white.webp"} width={145} height={32} alt="Eternity Logo" />
+          <LogoContainer>
+            <Image src={"/trading-comp/eternity-logo-white.webp"} width={145} height={32} alt="Eternity Logo" />
+          </LogoContainer>
           <HeaderButton onClick={handleRegisterScroll}>Register Now</HeaderButton>
         </HeaderSection>
       </HeaderContainer>
