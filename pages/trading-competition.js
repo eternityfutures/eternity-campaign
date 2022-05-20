@@ -3,14 +3,19 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import styled from 'styled-components'
+import OtherLeaderboardCard from '../components/OtherLeaderboardCard'
 
 const LayoutComponent = dynamic(() => import('../components/LayoutComponent'))
 const HeaderContainer = dynamic(
-  () => import('../components/Container').then((mod) => mod.ContainerHeader),
+  () => import('../components/Container').then((mod) => mod.HeaderContainer),
   { ssr: false }
 )
 const Container = dynamic(
   () => import('../components/Container').then((mod) => mod.Container),
+  { ssr: false }
+)
+const ContainerGradient = dynamic(
+  () => import('../components/Container').then((mod) => mod.GradientContainer),
   { ssr: false }
 )
 const FormInput = dynamic(
@@ -35,6 +40,7 @@ const HeaderButton = styled.button`
   color: #FDF7F2;
   font-family: "Sora", san-serif;
   font-size: 16px;
+  outline: none;
   @media (max-width: 768px) {
     width: 110px;
     font-size: 14px;
@@ -311,6 +317,10 @@ const ProfitText = styled.p`
   }
 `
 
+const OtherLeaderboardList = styled.div`
+
+`
+
 export default function Home() {
   const registerRef = useRef()
 
@@ -330,18 +340,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HeaderContainer color="#D64CA8">
+      <HeaderContainer>
         <HeaderSection>
           <Image src={"/trading-comp/eternity-logo-white.webp"} width={145} height={32} alt="Eternity Logo" />
           <HeaderButton onClick={handleRegisterScroll}>Register Now</HeaderButton>
         </HeaderSection>
       </HeaderContainer>
-
+      
       <Container>
         <IntroSection>
           <Title>ETERNITY PRESENT:</Title>
           <TitleMargin color='#212427'>TRADING COMPETITION 2022</TitleMargin>
-          <Image src={"/trading-comp/banner-final.webp"} width={1080} height={552} alt="Banner" style={{ borderRadius: 12 }}/>
+          <Image src={"/trading-comp/banner-final.webp"} width={1080} height={552} alt="Banner" />
           <Description style={{ marginTop: 16 }}>
             Saat yang ditunggu-tunggu nih! Kompetisi Trading 2022 dari Eternity Futures akan hadir! 
             Untuk kamu para trader dan investor yang ingin memperoleh keuntungan hingga ratusan juta rupiah dari aktivitas trading kamu. 
@@ -351,7 +361,7 @@ export default function Home() {
         </IntroSection>
       </Container>
 
-      <Container color="#D64CA8">
+      <ContainerGradient>
         <IntroSection>
           <TitleMargin color='#FFF'>Persyaratan Pendaftaran Program Eternity Trading Competition</TitleMargin>
           <Ol type='1'>
@@ -361,7 +371,7 @@ export default function Home() {
             <List style={{ color: '#FFF' }}>Peserta Akan disediakan Akun demo sebesar $2,000 oleh pihak Eternity Futures dan peserta harus melakukan trading dengan minimum 5 lots turnover</List>
           </Ol>
         </IntroSection>
-      </Container>
+      </ContainerGradient>
 
       <Container>
         <IntroSection>
@@ -396,7 +406,7 @@ export default function Home() {
 
           <SubHeading>Hadiah Tambahan:</SubHeading>
           <Ol type='1'>
-            <List>Untuk 10 pemenang akan diberikan <b> Demo Accounts dengan nominal $1,000</b> dimana tiap <b> PROFIT yang dihasilkan dapat di-withdraw</b> dengan ketentuan:</List>
+            <List>Kepada 10 pemenang akan diberikan <b> Demo Accounts dengan nominal $1,000</b> dimana tiap <b> PROFIT yang dihasilkan dapat di-withdraw</b> dengan ketentuan:</List>
             <ul>
               <List>transaksi minimal 20 lots turnover</List>
               <List>periode 2 minggu</List>
@@ -409,7 +419,7 @@ export default function Home() {
       </Container>
 
       <div ref={registerRef}>
-        <Container color="#D64CA8">
+        <ContainerGradient>
           <IntroSection>
             <TitleMargin color='#FFF'>Daftar Sekarang!</TitleMargin>
             <Flex>
@@ -448,7 +458,7 @@ export default function Home() {
             </Flex>
             
           </IntroSection>
-        </Container>
+        </ContainerGradient>
       </div>
 
       <Container>
@@ -523,6 +533,17 @@ export default function Home() {
             </LeaderboardCard>
 
           </LeaderboardList>
+
+          <OtherLeaderboardList>
+            <OtherLeaderboardCard rank='4' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='5' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='6' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='7' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='8' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='9' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='10' name='Finsen Antonius' gain="+159%" />
+          </OtherLeaderboardList>
+
 
         </IntroSection>
       </Container>

@@ -2,12 +2,28 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   background-color: ${props => props.backgroundColor};
-  border-top: ${props => props.border};
-  border-bottom: ${props => props.border};
-  border-color: ${props => props.borderColor};
   width: 100%;
   margin: 0 auto;
   padding: 0 0;
+`
+
+const WrapperGradient = styled.div`
+  background: rgb(247,148,29);
+  background: linear-gradient(60deg, rgba(247,148,29,1) 0%, rgba(197,72,140,1) 35%);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0;
+`
+
+const WrapperHeader = styled.div`
+  background: rgb(247,148,29);
+  background: linear-gradient(60deg, rgba(247,148,29,1) 0%, rgba(197,72,140,1) 35%);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 `
 
 const ContainerHeaderWrapper = styled.div`
@@ -24,22 +40,32 @@ const ContainerWrapper = styled.div`
   max-width: 1024px;
 `
 
-export function ContainerHeader({ children, color, border, borderColor }) {
+export function HeaderContainer({ children }) {
   return (
-    <Wrapper backgroundColor={color} border={border} borderColor={borderColor}>
+    <WrapperHeader>
       <ContainerHeaderWrapper>
         {children}
       </ContainerHeaderWrapper>
-    </Wrapper>
+    </WrapperHeader>
   )
 }
 
-export function Container({ children, color, border, borderColor }) {
+export function Container({ children, color }) {
   return (
-    <Wrapper backgroundColor={color} border={border} borderColor={borderColor}>
+    <Wrapper backgroundColor={color}>
       <ContainerWrapper>
         {children}
       </ContainerWrapper>
     </Wrapper>
+  )
+}
+
+export function GradientContainer({ children }) {
+  return (
+    <WrapperGradient>
+      <ContainerWrapper>
+        {children}
+      </ContainerWrapper>
+    </WrapperGradient>
   )
 }
