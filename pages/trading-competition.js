@@ -143,8 +143,30 @@ const RegisterButton = styled.button`
   font-weight: bold;
   letter-spacing: 1px;
   :disabled {
-    background-color: #8a629c;
+    background-color: #f5b598;
     cursor: wait;
+  }
+`
+
+const ErrorText = styled.p`
+  font-family: "Sora", san-serif;
+  color: red;
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
+
+const SuccessText = styled.p`
+  font-family: "Sora", san-serif;
+  color: #02d602;
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
 `
 
@@ -224,7 +246,7 @@ const WinnerAsset = styled.div`
   right: 81%;
   bottom: 81%;
   @media (max-width: 768px) {
-    width: 20%;
+    width: 15%;
     position: static;
   }
 `
@@ -235,7 +257,7 @@ const WinnerAssetSm = styled.div`
   right: 85%;
   bottom: 75%;
   @media (max-width: 768px) {
-    width: 20%;
+    width: 15%;
     position: static;
   }
 `
@@ -302,7 +324,7 @@ const LeaderboardName = styled.p`
   color: #FFFFFF;
   margin: 0;
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `
 
@@ -327,10 +349,56 @@ export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
   function handleRegisterScroll() {
     registerRef.current.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const handlePost = async (e) => {
+    e.preventDefault();
+
+    // reset error and message
+    setError('');
+    setMessage('');
+
+    // fields check
+    if (!name || !email || !phoneNumber ) return setError('All fields are required');
+
+    setLoading(true);
+    // post structure
+    let user = {
+        name,
+        email,
+        phoneNumber,
+        createdAt: new Date().toString(),
+    };
+    // save the post
+    let response = await fetch('/api/trading-comp', {
+        method: 'POST',
+        body: JSON.stringify(user),
+    });
+
+    // get the data
+    let data = await response.json();
+
+    if (data.success) {
+        // reset the fields
+        setName('');
+        setEmail('')
+        setPhoneNumber('')
+        setLoading(false);
+
+        // set the message
+        return setMessage('Success Input Data');
+    } else {
+        // set the error
+        setLoading(false);
+        return setError('Error, please try again');
+    }
+  };
 
   return (
     <LayoutComponent>
@@ -424,7 +492,7 @@ export default function Home() {
             <TitleMargin color='#FFF'>Daftar Sekarang!</TitleMargin>
             <Flex>
               <FormContainer>
-                <form>
+                <form onSubmit={handlePost}>
                   <Form>
                     <FormInput 
                       label="Name" 
@@ -448,8 +516,12 @@ export default function Home() {
                       onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                   </Form>
-                  <RegisterButton>Submit</RegisterButton>
+                  <RegisterButton type='submit' disabled={loading}>
+                    {loading ? 'Loading..' : 'Submit'}
+                  </RegisterButton>
                 </form>
+                <ErrorText>{error}</ErrorText>
+                <SuccessText>{message}</SuccessText>
               </FormContainer>
 
               <Asset>
@@ -507,7 +579,7 @@ export default function Home() {
                 <WinnerAsset>
                   <Image src={"/trading-comp/winner-1.webp"} width={100} height={100} />
                 </WinnerAsset>
-                <LeaderboardName>Finsen Antonius</LeaderboardName>
+                <LeaderboardName>Test 1</LeaderboardName>
                 <ProfitText>+533,96%</ProfitText>
               </MainLeaderboard>
             </LeaderboardCard>
@@ -517,7 +589,7 @@ export default function Home() {
                 <WinnerAssetSm>
                   <Image src={"/trading-comp/winner-2.webp"} width={80} height={80} />
                 </WinnerAssetSm>
-                <LeaderboardName>Bella Patriani</LeaderboardName>
+                <LeaderboardName>Test 2</LeaderboardName>
                 <ProfitText>+200,73%</ProfitText>
               </OtherLeaderboard>
             </LeaderboardCard>
@@ -527,7 +599,7 @@ export default function Home() {
                 <WinnerAssetSm>
                   <Image src={"/trading-comp/winner-3.webp"} width={80} height={80} />
                 </WinnerAssetSm>
-                <LeaderboardName>Aurel</LeaderboardName>
+                <LeaderboardName>Test data</LeaderboardName>
                 <ProfitText>+33,96%</ProfitText>
               </OtherLeaderboard>
             </LeaderboardCard>
