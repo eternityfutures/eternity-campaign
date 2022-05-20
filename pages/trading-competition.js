@@ -103,6 +103,22 @@ const Description = styled.p`
   line-height: 1.8;
 `
 
+const FormDescription = styled.p`
+  font-family: "Sora", san-serif;
+  font-size: 12px;
+  color: #212427;
+  margin: 0;
+  line-height: 1.8;
+`
+
+const LinkText = styled.a`
+  font-family: "Sora", san-serif;
+  font-weight: bold;
+  line-height: 1.8;
+  color: #FFF;
+  word-wrap: break-word;
+`
+
 const Table = styled.table`
   width: 80%;
   @media (max-width: 768px) {
@@ -137,7 +153,7 @@ const FormContainer = styled.div`
 `
 
 const Form = styled.div`
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 `
 
 const RegisterButton = styled.button`
@@ -152,6 +168,7 @@ const RegisterButton = styled.button`
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 1px;
+  margin-top: 16px;
   :disabled {
     background-color: #f5b598;
     cursor: wait;
@@ -441,67 +458,64 @@ export default function Home() {
           <Title>ETERNITY PRESENT:</Title>
           <TitleMargin color='#212427'>TRADING COMPETITION 2022</TitleMargin>
           <Image src={"/trading-comp/banner-final.webp"} width={1080} height={552} alt="Banner" />
-          <Description style={{ marginTop: 16 }}>
-            Saat yang ditunggu-tunggu nih! Kompetisi Trading 2022 dari Eternity Futures akan hadir! 
-            Untuk kamu para trader dan investor yang ingin memperoleh keuntungan hingga ratusan juta rupiah dari aktivitas trading kamu. 
-            Yuk gabung Eternity Trading Competition 2022 dan menangkan hadiah total Rp 100 Juta++, 
-            kapan lagi trading bohongan tapi dapat duit beneran?
-          </Description>
+          <Description style={{ marginTop: 16 }}>Saat yang ditunggu-tunggu nih!</Description> 
+          <Description>Kompetisi Trading 2022 dari Eternity Futures akan hadir untuk kamu para trader dan investor. Yuk gabung di Eternity Trading Competition 2022 dan menangkan total hadiah Rp 100 Juta++.</Description>
+          <Description>Kapan lagi TRADING BOHONGAN tapi dapat DUIT BENERAN?</Description>
         </IntroSection>
       </Container>
 
       <ContainerGradient>
         <IntroSection>
-          <TitleMargin color='#FFF'>Persyaratan Pendaftaran Program Eternity Trading Competition</TitleMargin>
+          <TitleMargin color='#FFF'>Persyaratan & Pendaftaran Eternity Trading Competition</TitleMargin>
           <Ol type='1'>
-            <List style={{ color: '#FFF' }}>Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures</List>
-            <List style={{ color: '#FFF' }}>Calon Peserta memiliki waktu mendaftar diri untuk program Eternity Trading Competition pada 23 Mei - 9 Juni 2022</List>
-            <List style={{ color: '#FFF' }}>Periode Eternity trading competition 2022 akan berlangsung mulai dari 13-24 Juni 2022.</List>
-            <List style={{ color: '#FFF' }}>Peserta Akan disediakan Akun demo sebesar $2,000 oleh pihak Eternity Futures dan peserta harus melakukan trading dengan minimum 5 lots turnover</List>
+            <List style={{ color: '#FFF' }}>Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures <span><LinkText href='https://campaign.eternityfutures.com/trading-competition'>https://campaign.eternityfutures.com/trading-competition</LinkText></span></List>
+            <List style={{ color: '#FFF' }}>Calon Peserta dapat mendaftar untuk ikut dalam Eternity Trading Competition pada 23 Mei - 9 Juni 2022</List>
+            <List style={{ color: '#FFF' }}>Eternity trading competition 2022 akan berlangsung <b>mulai dari 13 hingga 24 Juni 2022</b></List>
+            <List style={{ color: '#FFF' }}>Kepada Peserta akan diberikan Akun demo sebesar $2,000 dan peserta harus melakukan transaksi sebanyak <b>minimum 5 lots turnover</b></List>
           </Ol>
         </IntroSection>
       </ContainerGradient>
 
       <Container>
         <IntroSection>
-          <TitleMargin color='#212427'>Pembagian Hadiah Eternity Trading Competition</TitleMargin>
+          <TitleMargin color='#212427'>Hadiah Eternity Trading Competition</TitleMargin>
 
           <PrizeContainer>
             <MainPrize>
               <PrizeText color='#FFF'>Juara 1</PrizeText>
-              <PrizeText color='#FFF'>Rp 10juta</PrizeText>
+              <PrizeText color='#FFF'>Rp 10,000,000</PrizeText>
             </MainPrize>
 
             <OtherPrize>
               <PrizeText color='#212427'>Juara 2</PrizeText>
-              <PrizeText color='#212427'>Rp 5juta</PrizeText>
+              <PrizeText color='#212427'>Rp 5,000,000</PrizeText>
             </OtherPrize>
 
             <OtherPrize>
               <PrizeText color='#212427'>Juara 3</PrizeText>
-              <PrizeText color='#212427'>Rp 2juta</PrizeText>
+              <PrizeText color='#212427'>Rp 2,000,000</PrizeText>
             </OtherPrize>
 
             <OtherPrize>
               <PrizeText color='#212427'>Juara 4 - 10</PrizeText>
-              <PrizeText color='#212427'>Total Rp 7juta</PrizeText>
+              <PrizeText color='#212427'>@ Rp 1,000,000</PrizeText>
             </OtherPrize>
 
             <OtherPrize>
-              <PrizeText color='#212427'>Jumlah Turnover Terbanyak</PrizeText>
-              <PrizeText color='#212427'>Rp 3juta</PrizeText>
+              <PrizeText color='#212427'>Turnover Terbanyak</PrizeText>
+              <PrizeText color='#212427'>Rp 3,000,000</PrizeText>
             </OtherPrize>
           </PrizeContainer>
 
           <SubHeading>Hadiah Tambahan:</SubHeading>
           <Ol type='1'>
-            <List>Kepada 10 pemenang akan diberikan <b> Demo Accounts dengan nominal $1,000</b> dimana tiap <b> PROFIT yang dihasilkan dapat di-withdraw</b> dengan ketentuan:</List>
+            <List>Kepada 10 pemenang akan diberikan <b> Demo Accounts dengan nominal $1,000</b> dimana <b> PROFIT yang dihasilkan dapat di-withdraw</b> dengan ketentuan:</List>
             <ul>
               <List>transaksi minimal 20 lots turnover</List>
-              <List>periode 2 minggu</List>
+              <List>periode transaksi 2 minggu</List>
               <List>maksimum profit yang dapat di-withdraw sebesar $1,000 atau Rp 10juta</List>
             </ul>
-            <List>Untuk <u>semua partisipan</u> akan yang membukan Real Account akan <b>mendapatkan FREE COMM hingga akhir Juli 2022</b></List>
+            <List>Untuk <u>semua peserta Trading Competition</u> yang membuka Real Account akan <b>mendapatkan FREE COMM hingga akhir Juli 2022</b></List>
           </Ol>
 
         </IntroSection>
@@ -537,6 +551,8 @@ export default function Home() {
                       onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                   </Form>
+                  <FormDescription>Peserta akan dikonfirmasi melalui Nomor Telepon ini.</FormDescription>
+                  <FormDescription>Pastikan Nomor yang Anda input VALID.</FormDescription>
                   <RegisterButton type='submit' disabled={loading}>
                     {loading ? 'Loading..' : 'Submit'}
                   </RegisterButton>
@@ -558,7 +574,7 @@ export default function Home() {
         <IntroSection>
           <TitleMargin color='#212427'>Syarat & Ketentuan Eternity Trading Competition</TitleMargin>
           <Ol type='1'>
-            <List>Periode Eternity Trading Competition 2022 akan dilaksanakan dengan keterangan sebagai berikut:</List>
+            <List>Eternity Trading Competition 2022 akan dilaksanakan dengan details sebagai berikut:</List>
             <Table>
               <tr>
                 <Td>Periode Registrasi</Td>
@@ -569,7 +585,7 @@ export default function Home() {
                 <Td>: 13 - 24 Juni 2022</Td>
               </tr>
               <tr>
-                <Td>Periode Pengumuman Pemenang</Td>
+                <Td>Pengumuman Pemenang</Td>
                 <Td>: 27 Juni 2022</Td>
               </tr>
             </Table>
@@ -580,9 +596,9 @@ export default function Home() {
               </Ol>
             </List>
             <List>Pemenang Eternity Trading Competition 2022 akan diumumkan melalui Story dan Feed IG Eternity.</List>
-            <List>Peserta hanya dapat mendaftarkan 1 (satu) akun untuk berpartisipasi dan memberikan data diri yang benar.</List>
-            <List>Hadiah tidak dapat dipindahtangankan atau dialihkan kepada pihak selain pemenang.</List>
-            <List>Pemenang akan diminta untuk memberikan foto dan KTP miliknya melalui Google Form untuk tujuan pendistribusian hadiah.</List>
+            <List>Peserta harus berusia minimal 21 tahun dan hanya dapat mendaftarkan 1 (satu) akun untuk berpartisipasi dengan memberikan data diri yang benar.</List>
+            <List>Hadiah tidak dapat dipindahtangankan atau dialihkan kepada pihak lain.</List>
+            <List>Pemenang akan diminta untuk memberikan foto selfie dengan KTP dan KTP miliknya melalui Google Form untuk tujuan Konfirmasi Identitas.</List>
             <List>Dengan mengikuti Eternity Trading Competition 2022, Peserta mengerti dan setuju terhadap Syarat & Ketentuan Trading Competition 2022.</List>
             <List>Keputusan yang ditetapkan pihak Eternity Futures bersifat final, mengikat, mutlak dan tidak dapat diganggu gugat.</List>
           </Ol>

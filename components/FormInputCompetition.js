@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   width: 100%;
   text-align: start;
-  margin-bottom: 16px;
+  margin-top: 16px;
 `
 
 const Label = styled.p`
