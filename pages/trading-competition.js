@@ -270,6 +270,7 @@ const LeaderboardList = styled.div`
   @media (max-width: 768px) {
    flex-direction: column; 
    gap: 30px;
+   margin: 1.5rem 0;
   }
 `
 
@@ -341,6 +342,12 @@ const ProfitText = styled.p`
 
 const OtherLeaderboardList = styled.div`
 
+`
+
+const PinkBar = styled.div`
+  border-top: 8px solid #D64CA8;
+  width: 120px;
+  margin: 30px auto;
 `
 
 export default function Home() {
@@ -605,6 +612,8 @@ export default function Home() {
             </LeaderboardCard>
 
           </LeaderboardList>
+
+          <PinkBar />
 
           <OtherLeaderboardList>
             <OtherLeaderboardCard rank='4' name='Finsen Antonius' gain="+159%" />
