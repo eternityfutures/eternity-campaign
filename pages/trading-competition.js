@@ -449,7 +449,7 @@ export default function Home() {
         <IntroSection>
           <Title color='#212427'>ETERNITY PRESENT:</Title>
           <TitleMargin color='#212427'>TRADING COMPETITION 2022</TitleMargin>
-          <Image src={"/trading-comp/banner-final4.webp"} width={1080} height={552} alt="Banner" />
+          <Image src={"/trading-comp/banner-99.webp"} width={1080} height={552} alt="Banner" />
           <Description style={{ marginTop: 16 }}>Saat yang ditunggu-tunggu nih!</Description> 
           <Description>Kompetisi Trading 2022 dari Eternity Futures akan hadir untuk kamu para trader dan investor. Yuk gabung di Eternity Trading Competition 2022 dan menangkan total hadiah Rp 100 Juta++.</Description>
           <Description>Kapan lagi TRADING BOHONGAN tapi dapat DUIT BENERAN?</Description>
@@ -462,8 +462,8 @@ export default function Home() {
           <TitleMargin color='#FFF'>Eternity Trading Competition</TitleMargin>
           <Ol type='1'>
             <List style={{ color: '#FFF' }}>Calon peserta wajib mengisi formulir registrasi yang tersedia di halaman web resmi Eternity Futures</List>
-            <List style={{ color: '#FFF' }}>Calon Peserta dapat mendaftar untuk ikut dalam Eternity Trading Competition pada <b>23 Mei - 9 Juni 2022</b></List>
-            <List style={{ color: '#FFF' }}>Eternity trading competition 2022 akan berlangsung <b>mulai dari 13 hingga 24 Juni 2022</b></List>
+            <List style={{ color: '#FFF' }}>Calon Peserta dapat mendaftar untuk ikut dalam Eternity Trading Competition pada <b>2 Juni hingga 30 Juni 2022</b></List>
+            <List style={{ color: '#FFF' }}>Eternity trading competition 2022 akan berlangsung <b>mulai dari 4 Juli hingga 17 Juli 2022</b></List>
             <List style={{ color: '#FFF' }}>Kepada Peserta akan diberikan Akun demo sebesar $2,000 dan peserta harus melakukan transaksi sebanyak <b>minimum 5 lots turnover</b></List>
           </Ol>
         </IntroSection>
@@ -508,7 +508,7 @@ export default function Home() {
               <List>periode transaksi 2 minggu</List>
               <List>maksimum profit yang dapat di-withdraw sebesar $1,000 atau Rp 10juta</List>
             </ul>
-            <List>Untuk <u>semua peserta Trading Competition</u> yang membuka Real Account akan <b>mendapatkan FREE COMM hingga akhir Juli 2022</b></List>
+            <List>Untuk <u>semua peserta Trading Competition</u> yang membuka Real Account akan <b>mendapatkan FREE COMM hingga akhir Agustus 2022</b></List>
           </Ol>
 
         </IntroSection>
@@ -572,15 +572,15 @@ export default function Home() {
               <tbody>
                 <tr>
                   <Td>Periode Registrasi</Td>
-                  <Td>: 23 Mei - 9 Juni 2022</Td>
+                  <Td>: 2 - 30 Juni 2022</Td>
                 </tr>
                 <tr>
                   <Td>Periode Trading Competition</Td>
-                  <Td>: 13 - 24 Juni 2022</Td>
+                  <Td>: 4 - 17 Juli 2022</Td>
                 </tr>
                 <tr>
                   <Td>Pengumuman Pemenang</Td>
-                  <Td>: 27 Juni 2022</Td>
+                  <Td>: 20 Juli 2022</Td>
                 </tr>
               </tbody>
             </Table>
