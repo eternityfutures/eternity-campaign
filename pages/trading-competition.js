@@ -641,13 +641,13 @@ export default function Home() {
           <PinkBar />
 
           <OtherLeaderboardList>
-            <OtherLeaderboardCard rank='4' name='Finsen Antonius' gain="+159%" />
-            <OtherLeaderboardCard rank='5' name='Finsen Antonius' gain="+159%" />
-            <OtherLeaderboardCard rank='6' name='Finsen Antonius' gain="+159%" />
-            <OtherLeaderboardCard rank='7' name='Finsen Antonius' gain="+159%" />
-            <OtherLeaderboardCard rank='8' name='Finsen Antonius' gain="+159%" />
-            <OtherLeaderboardCard rank='9' name='Finsen Antonius' gain="+159%" />
-            <OtherLeaderboardCard rank='10' name='Finsen Antonius' gain="+159%" />
+            <OtherLeaderboardCard rank='4' name='Test' gain="+159%" />
+            <OtherLeaderboardCard rank='5' name='Test' gain="+159%" />
+            <OtherLeaderboardCard rank='6' name='Test' gain="+159%" />
+            <OtherLeaderboardCard rank='7' name='Test' gain="+159%" />
+            <OtherLeaderboardCard rank='8' name='Test' gain="+159%" />
+            <OtherLeaderboardCard rank='9' name='Test' gain="+159%" />
+            <OtherLeaderboardCard rank='10' name='Test' gain="+159%" />
           </OtherLeaderboardList>
 
 
